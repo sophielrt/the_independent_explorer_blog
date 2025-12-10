@@ -1,1 +1,1 @@
-web: gunicorn the-independent-explorer-blog.wsgi
+web: gunicorn the_independent_explorer.wsgi
