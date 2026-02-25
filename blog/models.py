@@ -7,7 +7,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    Slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     read_time = models.IntegerField(help_text="Estimated read time in minutes")
     destination = models.CharField(max_length=200, help_text="Destination which the blog post is related to")
