@@ -1,4 +1,5 @@
-{% load static %} {% url 'home' as home_url %}
+{% load static %}
+{% url 'home' as home_url %}
 
 <!doctype html>
 <html lang="en">
@@ -16,15 +17,15 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <!-- Navbar -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="../blog/templates/blog/index.html">
+            <a class="navbar-brand" href="">
                 <img src="" alt="The Independent Explorer Logo" class="logo d-inline-block align-text-top" />
             </a>
             <div class="navbar-brand d-inline-block align-text-top">
-                <a class="nav-link" href="../blog/templates/blog/index.html">The Independent Explorer</a>
+                <a class="nav-link" href="">The Independent Explorer</a>
             </div>
             <button id="burger-ico" class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -52,6 +53,13 @@
             </div>
         </div>
     </nav>
+
+    <main>
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+    </main>
+
 
     <!-- Footer -->
     <footer class="footer mt-auto">
