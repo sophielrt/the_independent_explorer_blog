@@ -9,7 +9,34 @@
 
 
 <!-- Blog Column 4 blog posts visable 2 per row, next and prev buttons-->
-<p>Blogs</p>
+<div class="row">
+    <div class="col-12 col-md-6">
+        {% for post in post_list %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="image-container">
+                    <div class="image-flash">
+                    </div>
+                </div>
+                <a href="#" class="post-link">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                </a>
+                <p class="card-text text-muted">Destination: {{ post.destination }}</p>
+                <p class="card-text text-muted h6">Estimated read time: {{ post.read_time }} minutes</p>
+                <p class="card-text">{{ post.excerpt }}</p>
+                <hr />
+                <p class="card-text text-muted h6">Published on: {{ post.published }}</p>
+            </div>
+        </div>
+    </div>
+    {% if forloop.counter|divisibleby:2 %}
+</div>
+<div class="row">
+    {% endif %}
+    {% endfor %}
+</div>
+
+
 <!-- About The Independent Explorer -->
 <p>About The Independent Explorer</p>
 <!-- Destinations Visited plus carousel-->
