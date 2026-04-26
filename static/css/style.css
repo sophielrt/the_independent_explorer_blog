@@ -11,3 +11,21 @@
     --light-orange: #F9B487;
     --blue: #9CC6DB; 
 }
+
+/* Global styles */
+body {
+    font-family: var(--secondary-font);
+    background-color: var(--warm-sand);
+    color: var(--charcoal);
+}
+
+h1, h2, h6 {
+    font-family: var(--primary-font);
+    color: var(--orange)
+}
+
+
+#navbar {
+    background-color: var(--charcoal);
+    border-bottom: 1.5px solid; 
+}
