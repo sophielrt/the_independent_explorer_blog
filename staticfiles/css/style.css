@@ -1,0 +1,13 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Old+Standard+TT&display=swap');
+
+/* CSS variables */
+:root {
+    --primary-font: "Poppins", Verdana, sans-serif;
+    --secondary-font: "Inter", "Trebuchet MS", sans-serif;
+    --warm-sand: #F5F1E8;
+    --charcoal:#2C2C2C;
+    --orange: #FF8040;
+    --light-orange: #F9B487;
+    --blue: #9CC6DB; 
+}
