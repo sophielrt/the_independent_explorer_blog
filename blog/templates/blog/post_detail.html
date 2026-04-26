@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+
+<!-- Masthead -->
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <!-- Blog Post Title-->
+                <h1 class="post-title">{{ post.title }}</h1>
+                <!-- Blog Post Destination-->
+                <p class="post-destination">Destination: {{ post.destination }}</p>
+                <!-- Blog Post Estimated Read Time -->
+                <p class="post-read-time">Estimated read time: {{ post.read_time }} minutes</p>
+                <!-- Blog Post Published Date -->
+                <p class="post-published">Published on: {{ post.published }}</p>
+            </div>
+            <div class="col-md-6 d-none d-md-block masthead-image">
+                <img src="" class="scale" alt="placeholder The Independent Explorer Image">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Blog Post Content -->
+<div class="container">
+    <div class="row">
+        <div class="">
+            <div class="card-body card mb-4 mt-3 left top">
+                <!-- Post Content-->
+                <p class="card-text">
+                    {{ post.content|safe }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
