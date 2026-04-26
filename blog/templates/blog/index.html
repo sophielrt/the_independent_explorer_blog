@@ -36,6 +36,25 @@
     {% endfor %}
 </div>
 
+<!-- Pagination -->
+{% if is_paginated %}
+<nav aria-label="Blog navigation">
+    <ul class="pagination justify-content-centre">
+
+        <!-- Previous Page Button -->
+        {% if page_obj.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">&laquo; PREV</a></li>
+        {% endif %}
+
+        <!-- Next Page Button -->
+        {% if page_obj.has_next %} 
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">NEXT &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
 
 <!-- About The Independent Explorer -->
 <p>About The Independent Explorer</p>
