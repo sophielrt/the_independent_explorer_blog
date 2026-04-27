@@ -30,10 +30,11 @@ h1, h2, h6 {
     border-bottom: 1.5px solid; 
 }
 
-a.nav-link {
+.nav-link {
+    color: var(--orange);
+}
+
+.nav-link:hover {
     color: var(--light-orange);
 }
 
-a.nav-link:hover {
-    color: var(--orange);
-}
