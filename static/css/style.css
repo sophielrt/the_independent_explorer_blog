@@ -29,3 +29,11 @@ h1, h2, h6 {
     background-color: var(--charcoal);
     border-bottom: 1.5px solid; 
 }
+
+a.nav-link {
+    color: var(--light-orange);
+}
+
+a.nav-link:hover {
+    color: var(--orange);
+}
