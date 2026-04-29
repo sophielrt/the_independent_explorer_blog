@@ -11,3 +11,40 @@
     --light-orange: #F9B487;
     --blue: #9CC6DB; 
 }
+
+/* Global styles */
+body {
+    font-family: var(--secondary-font);
+    background-color: var(--warm-sand);
+    color: var(--charcoal);
+}
+
+h1, h2, h6 {
+    font-family: var(--primary-font);
+    color: var(--orange)
+}
+
+.section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Navbar */
+#navbar {
+    background-color: var(--charcoal);
+    border-bottom: 1.5px solid;
+}
+
+.nav-link {
+    color: var(--orange);
+}
+
+.nav-link:hover {
+    color: var(--light-orange);
+}
+
+/* Blog cards */
+
+#blog-section-title {
+    padding-top: 5rem;
+}
