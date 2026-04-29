@@ -24,10 +24,15 @@ h1, h2, h6 {
     color: var(--orange)
 }
 
+.section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
 
+/* Navbar */
 #navbar {
     background-color: var(--charcoal);
-    border-bottom: 1.5px solid; 
+    border-bottom: 1.5px solid;
 }
 
 .nav-link {
@@ -38,3 +43,8 @@ h1, h2, h6 {
     color: var(--light-orange);
 }
 
+/* Blog cards */
+
+#blog-section-title {
+    padding-top: 5rem;
+}
