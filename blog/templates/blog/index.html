@@ -6,7 +6,22 @@
 <!-- index.html content starts here -->
 
 
-<!-- Hero Image and small section of text -->
+<!-- Hero Video and small section of text -->
+<section class="section" id="hero-section">
+    <video autoplay muted loop playinline id="hero-video">
+        <!-- Video by Anton Lukin accessed via Pixabay -->
+        <source src="{% static 'videos/hero.mp4' %}" type="video/mp4" />
+            Your browser does not support the video tag.
+    </video>
+    <div id="hero-overlay">
+        <div class="hero-text-box">
+            <h1>The Independent Explorer</h1>
+            <p>Your adventure awaits!</p>
+        </div>
+        <a href="#blog-section" class="btn btn-hero">Explore Blogs</a>
+    </div>
+</section>
+
 
 
 <!-- Blog Column 4 blog posts visable 2 per row, next and prev buttons-->
@@ -75,18 +90,18 @@
 
 <!-- Destinations Visited plus carousel-->
 
-<section class="container section" id="destinations-section">
+<!--<section class="container section" id="destinations-section">
 
-    <!-- Destinations Title -->
-    <h1 class="text-center" id="destinations-title">Destinations Visited</h1>
+     Destinations Title
+     <h1 class="text-center" id="destinations-title">Destinations Visited</h1>
 
-    <!-- Destinations Grid: 4 per row -->
+     Destinations Grid: 4 per row 
     <div class="row g-3">
 
-        <!-- Card 1 -->
+        Card 1 
         <div class="col-6 col-md-3">
             <div class="card destination-card">
-                <!-- Image by Raimond Klavins accessed via Unsplash -->
+                 Image by Raimond Klavins accessed via Unsplash 
                 <img src="{% static 'images/destination1.jpg' %}" class="card-img-top" alt="Destination 1">
                 <div class="card-body">
                     <h5 class="card-title">Destination 1</h5>
@@ -94,7 +109,7 @@
             </div>
         </div>
 
-        <!-- Card 2 -->
+         Card 2 
         <div class="col-6 col-md-3">
             <div class="card destination-card">
                 <img src="{% static 'images/destination2.jpg' %}" class="card-img-top" alt="Destination 2">
@@ -104,7 +119,7 @@
             </div>
         </div>
 
-        <!-- Card 3 -->
+         Card 3 
         <div class="col-6 col-md-3">
             <div class="card destination-card">
                 <img src="{% static 'images/destination3.jpg' %}" class="card-img-top" alt="Destination 3">
@@ -115,7 +130,7 @@
         </div>
 
 
-        <!-- Card 4 -->
+         Card 4 
         <div class="col-6 col-md-3">
             <div class="card destination-card">
                 <img src="{% static 'images/destination4.jpg' %}" class="card-img-top" alt="Destination 4">
@@ -125,7 +140,7 @@
             </div>
         </div>
 
-        <!-- Card 5 -->
+         Card 5 
         <div class="col-6 col-md-3">
             <div class="card destination-card">
                 <img src="{% static 'images/destination5.jpg' %}" class="card-img-top" alt="Destination 5">
@@ -135,7 +150,7 @@
             </div>
         </div>
 
-        <!-- Card 6 -->
+        Card 6 
         <div class="col-6 col-md-3">
             <div class="card destination-card">
                 <img src="{% static 'images/destination6.jpg' %}" class="card-img-top" alt="Destination 6">
@@ -145,7 +160,7 @@
             </div>
         </div>
 
-        <!-- Card 7 -->
+         Card 7 
         <div class="col-6 col-md-3">
             <div class="card destination-card">
                 <img src="{% static 'images/destination7.jpg' %}" class="card-img-top" alt="Destination 7">
@@ -155,7 +170,7 @@
             </div>
         </div>
 
-        <!-- Card 8 -->
+        Card 8
         <div class="col-6 col-md-3">
             <div class="card destination-card">
                 <img src="{% static 'images/destination8.jpg' %}" class="card-img-top" alt="Destination 8">
@@ -168,7 +183,7 @@
 
     </div>
 
-</section>
+</section> -->
 
 
 <!-- Send Me a Message -->

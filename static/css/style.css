@@ -14,9 +14,8 @@
 
 /* Global styles */
 body {
-    font-family: var(--secondary-font);
     background-color: var(--warm-sand);
-    color: var(--charcoal);
+   
 }
 
 h1, h2, h6 {
@@ -24,10 +23,17 @@ h1, h2, h6 {
     color: var(--orange)
 }
 
+p {
+    font-family: var(--secondary-font);
+    color: var(--orange);
+}
+
 .section {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+
+
 
 /* Navbar */
 #navbar {
@@ -43,8 +49,54 @@ h1, h2, h6 {
     color: var(--light-orange);
 }
 
-/* Blog cards */
-
-#blog-section-title {
-    padding-top: 5rem;
+/* Hero Video Section */
+#hero-section {
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
+
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+#hero-overlay {
+    position:absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-text-box {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#hero-overlay h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--orange);
+}
+
+#hero-overlay p {
+    font-size: 1.25rem;
+    color: var(--warm-sand);
+}
+
+.btn-hero {
+    border: 2px solid var(--orange);
+    background-color: transparent;
+    color: var(--warm-sand);
+}
+
+/* Blog cards */
