@@ -1,5 +1,6 @@
 {% load static %}
 {% url 'home' as home_url %}
+{}
 
 <!doctype html>
 <html lang="en">
@@ -49,6 +50,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="">Contact</a>
                     </li>
+                    {% if user.is_authenticated and user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_login' %}">Admin</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
