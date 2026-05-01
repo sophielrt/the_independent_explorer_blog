@@ -41,6 +41,10 @@ p {
     border-bottom: 1.5px solid;
 }
 
+#navbar .logo {
+    width: 75px;
+}
+
 .nav-link {
     color: var(--orange);
 }
