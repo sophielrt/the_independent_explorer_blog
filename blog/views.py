@@ -41,6 +41,14 @@ def is_staff(user):
 @user_passes_test(is_staff, login_url='/admin-login/')
 def dashboard(request):
     posts = Post.objects.all().order_by("-published")
+    
+    if request.method == "POST":
+        delete_id = request.POST.get("delete_id")
+        if delete_id:
+            post = get_object_or_404(Post, pk=delete_id)
+            post.delete()
+            return redirect("admin_dashboard")
+    
     return render(request, "blog/admin_dashboard.html", {"posts": posts})
 
 @login_required(login_url='/admin-login/')
@@ -70,12 +78,3 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, "blog/post_form.html", {"form": form, "action": "Edit"})
-
-@login_required(login_url='/admin-login/')
-@user_passes_test(is_staff, login_url='/admin-login/')
-def post_delete(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    if request.method == "POST":
-        post.delete()
-        return redirect("admin_dashboard")
-    return render(request, "blog/post_delete.html", {"post": post})

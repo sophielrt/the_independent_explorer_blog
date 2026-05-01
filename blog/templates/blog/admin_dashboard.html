@@ -4,13 +4,13 @@
 {% block content %}
 
 <section class="container section" id="admin-dashboard">
+
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Admin Dashboard</h1>
-        <a href="{% url 'post_add' %}" class="btn">Add New Post</a>
+        <a href="{% url 'post_add' %}" class="btn">+ Add New Post</a>
     </div>
 
     {% for post in posts %}
-
     <div class="card mb-3 p-3">
         <div class="d-flex justify-content-between align-items-center">
             <div>
@@ -22,15 +22,54 @@
                 &nbsp; {{ post.read_time }} min read
             </div>
             <div>
-                <a href="{% url 'post_edit' post.pk %}" class="btn btn-sm">Edit</a>
-                <a href="{% url 'post_delete' post.pk %}" class="btn btn-sm btn-danger">Delete</a>
+                <a href="{% url 'post_edit' pk=post.pk %}" class="btn btn-sm">Edit</a>
+                <button class="btn btn-sm btn-danger"
+                data-bs-toggle="modal"
+                 data-bs-target="#deleteModal"
+                 data-post-id="{{ post.pk }}"
+                 data-post-title="{{ post.title }}">
+                 Delete
+                </button>
             </div>
         </div>
     </div>
     {% empty %}
     <p>No posts available. Add a new post</p>
     {% endfor %}
-
+ 
 </section>
 
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete Post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this post?<strong id="deletePostTitle"></strong>? This action cannot be undone.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="delete_id" id="deletePostId">
+            <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    const deleteModal = document.getElementById('deleteModal');
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        const postId = button.getAttribute('data-post-id');
+        const postTitle = button.getAttribute('data-post-title');
+        document.getElementById('deletePostId').value = postId;
+        document.getElementById('deletePostTitle').textContent = postTitle;
+    });
+</script>
 {% endblock %}
