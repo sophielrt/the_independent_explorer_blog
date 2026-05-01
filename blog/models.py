@@ -21,7 +21,7 @@ class Post(models.Model):
     view_count = models.IntegerField(default=0) # Need to edit this field to increment views automatically!
 
     class Meta:
-        ordering = ['-created_on']
+        ordering = ['-published']
 
     def __str__(self):
         return f"{self.title}"

@@ -99,4 +99,10 @@ p {
     color: var(--warm-sand);
 }
 
+.btn-hero:hover {
+    background-color: var(--orange);
+    color: var(--warm-sand);
+    border-color: var(--orange);
+}
+
 /* Blog cards */
