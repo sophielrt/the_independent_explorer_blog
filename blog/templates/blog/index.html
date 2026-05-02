@@ -37,6 +37,13 @@
             <div class="card h-100 blog-card">
                 <div class="card-body d-flex flex-column">
                     <div class="image-container">
+                        {% if "placeholder" in post.featured_image.url %}
+                            <!-- Placeholder image -->
+                            <!-- Image by Eva Darron Accessed Via Unsplash -->
+                            <img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder image">
+                        {% else %}
+                            <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                        {% endif %}
                         <div class="image-flash">
                         </div>
                     </div>
@@ -47,9 +54,9 @@
                     <p class="card-text text-muted h6">Estimated read time: {{ post.read_time }} minutes</p>
                     <p class="card-text">{{ post.excerpt }}</p>
                     <div class="blog-card mt-auto">
-                        <hr />
+                        <hr/>
                         <p class="card-text text-muted h6">Published on: {{ post.published }}</p>
-                        <a href="{% url 'post_detail' post.slug %}" class="btn">Read More</a>
+                        <a href="{% url 'post_detail' post.slug %}" class="btn custom-btn">Read More</a>
                     </div>
                 </div>
             </div>
@@ -64,23 +71,20 @@
     <!-- Pagination -->
     {% if is_paginated %}
     <nav aria-label="Blog navigation">
-        <ul class="pagination justify-content-" center>
+        <div class="d-flex justify-content-center gap-2">
 
             <!-- Previous Page Button -->
             {% if page_obj.has_previous %}
-            <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">&laquo;
+                <a class="btn custom-btn" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">&laquo;
                     PREV</a>
-            </li>
             {% endif %}
 
             <!-- Next Page Button -->
             {% if page_obj.has_next %}
-            <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">NEXT &raquo;</a>
-            </li>
+                <a class="btn custom-btn" href="?page={{ page_obj.next_page_number }}" aria-label="Next">NEXT &raquo;</a>
+
             {% endif %}
-        </ul>
+        </div>
     </nav>
     {% endif %}
 
