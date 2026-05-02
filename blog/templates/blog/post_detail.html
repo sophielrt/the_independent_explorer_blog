@@ -8,18 +8,26 @@
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
-            <div class="col-md-6 masthead-text">
+            <div class="col-12 col-md-6 order-md-1 masthead-image">
+                {% if "placeholder" in post.featured_image.url %}
+                <!-- Placeholder image -->
+                <!-- Image by Eva Darron Accessed Via Unsplash -->
+                <img src="{% static 'images/placeholder.jpg' %}" class="scale" alt="Placeholder image">
+                {% else %}
+                <img src="{{ post.featured_image.url }}" class="scale" alt="{{ post.title }}">
+                {% endif %}
+            </div>
+            <div class="col-12 col-md-6 order-md-1 masthead-text">
                 <!-- Blog Post Title-->
                 <h1 class="post-title">{{ post.title }}</h1>
-                <!-- Blog Post Destination-->
-                <p class="post-destination">Destination: {{ post.destination }}</p>
-                <!-- Blog Post Estimated Read Time -->
-                <p class="post-read-time">Estimated read time: {{ post.read_time }} minutes</p>
-                <!-- Blog Post Published Date -->
-                <p class="post-published">Published on: {{ post.published }}</p>
-            </div>
-            <div class="col-md-6 d-none d-md-block masthead-image">
-                <img src="" class="scale" alt="placeholder The Independent Explorer Image">
+                <div class="post-meta">
+                    <!-- Blog Post Destination-->
+                    <p class="post-destination">Destination: {{ post.destination }}</p>
+                    <!-- Blog Post Estimated Read Time -->
+                    <p class="post-read-time">Estimated read time: {{ post.read_time }} minutes</p>
+                    <!-- Blog Post Published Date -->
+                    <p class="post-published">Published on: {{ post.published }}</p>
+                </div>
             </div>
         </div>
     </div>
@@ -29,9 +37,9 @@
 <div class="container">
     <div class="row">
         <div class="">
-            <div class="card-body card mb-4 mt-3 left top">
+            <div class="post-card-body card mb-4 mt-3 left top">
                 <!-- Post Content-->
-                <p class="card-text">
+                <p class="post-card-text">
                     {{ post.content|safe }}
                 </p>
             </div>
