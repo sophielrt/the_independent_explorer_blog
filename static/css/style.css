@@ -294,4 +294,12 @@ p, .card-text, .card-text.text-muted {
     border: none !important;
 }
 
+/* Admin Login */
+#admin-login {
+    padding-top: 5rem;
+}
 
+/* Admin Dashboard */
+#admin-dashboard {
+    padding-top: 5rem;
+}

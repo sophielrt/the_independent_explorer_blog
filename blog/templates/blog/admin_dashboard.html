@@ -7,7 +7,7 @@
 
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Admin Dashboard</h1>
-        <a href="{% url 'post_add' %}" class="btn">+ Add New Post</a>
+        <a href="{% url 'post_add' %}" class="btn custom-btn">+ Add New Post</a>
     </div>
 
     {% for post in posts %}
@@ -22,7 +22,7 @@
                 &nbsp; {{ post.read_time }} min read
             </div>
             <div>
-                <a href="{% url 'post_edit' pk=post.pk %}" class="btn btn-sm">Edit</a>
+                <a href="{% url 'post_edit' pk=post.pk %}" class="btn btn-sm btn-warning">Edit</a>
                 <button class="btn btn-sm btn-danger"
                 data-bs-toggle="modal"
                  data-bs-target="#deleteModal"
