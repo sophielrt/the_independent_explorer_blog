@@ -18,9 +18,14 @@ body {
    
 }
 
-h1, h2, h6 {
+h1, h2, h6, .card-title {
     font-family: var(--primary-font);
     color: var(--orange)
+}
+
+#blog-section-title, #about-me-title, #destinations-title {
+    margin-bottom: 1.5rem;
+    margin-top: 0;
 }
 
 p, .card-text, .card-text.text-muted {
@@ -127,7 +132,7 @@ p, .card-text, .card-text.text-muted {
 
 #hero-overlay p {
     font-size: 1.25rem;
-    color: var(--warm-sand);
+    color: var(--warm-sand) !important;
 }
 
 .btn-hero {
@@ -167,6 +172,10 @@ p, .card-text, .card-text.text-muted {
     font-weight: bold;
 }
 
+#blog-section-title {
+    margin-bottom: 0.5rem;
+}
+
 .post-link {
     text-decoration: none;;
     color: var(--orange);
@@ -180,6 +189,46 @@ p, .card-text, .card-text.text-muted {
 .post-card-text.text-muted {
     font-size: 1rem;
     opacity: 0.8;
+}
+
+/* About Me */
+#about-me img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+#about-me .col-md-6:last-child {
+    padding-left: 1rem;
+    align-self: center;
+}
+
+#about-me p {
+    padding-top: 1rem;
+    font-size: 1rem;
+}
+
+/* Destinations Visited */
+.destination-card {
+    border: none;
+    background-color: transparent;
+}
+
+.destination-card .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.destination-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.destination-card .card-body {
+    padding: 0.2rem 0;
+    text-align: center;
 }
 
 /* Footer */
@@ -244,3 +293,5 @@ p, .card-text, .card-text.text-muted {
     background-color: transparent !important; 
     border: none !important;
 }
+
+
