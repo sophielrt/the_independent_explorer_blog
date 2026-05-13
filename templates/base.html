@@ -50,13 +50,10 @@
                         <a class="nav-link" href="{{ home_url }}#blog-section">Blogs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">About</a>
+                        <a class="nav-link" href="{{ home_url }}#about-me">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Destination</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Contact</a>
+                        <a class="nav-link" href="{{ home_url }}#destinations">Destination</a>
                     </li>
                     {% if user.is_authenticated and user.is_staff %}
                     <li class="nav-item">

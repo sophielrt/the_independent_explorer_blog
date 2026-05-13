@@ -5,13 +5,12 @@
 
 <!-- index.html content starts here -->
 
-
 <!-- Hero Video and small section of text -->
 <section class="section" id="hero-section">
     <video autoplay muted loop playsinline id="hero-video">
         <!-- Video by Anton Lukin accessed via Pixabay, hosted on Cloudinary -->
         <source src="https://res.cloudinary.com/dan9c6gwf/video/upload/hero_whqlg8.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
+        Your browser does not support the video tag.
     </video>
     <div id="hero-overlay">
         <div class="hero-text-box">
@@ -21,8 +20,6 @@
         <a href="#blog-section" class="btn btn-hero">Explore Blogs</a>
     </div>
 </section>
-
-
 
 <!-- Blog Column 4 blog posts visable 2 per row, next and prev buttons-->
 <section class="container section" id="blog-section">
@@ -38,11 +35,11 @@
                 <div class="card-body d-flex flex-column">
                     <div class="image-container">
                         {% if "placeholder" in post.featured_image.url %}
-                            <!-- Placeholder image -->
-                            <!-- Image by Eva Darron Accessed Via Unsplash -->
-                            <img class="card-img-top" src="{% static 'images/placeholder.jpg' %}" alt="Placeholder image">
+                        <!-- Placeholder image -->
+                        <!-- Image by Eva Darron Accessed Via Unsplash -->
+                        <img class="card-img-top" src="{% static 'images/placeholder.jpg' %}" alt="Placeholder image">
                         {% else %}
-                            <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                        <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                         {% endif %}
                         <div class="image-flash">
                         </div>
@@ -54,7 +51,7 @@
                     <p class="card-text text-muted h6">Estimated read time: {{ post.read_time }} minutes</p>
                     <p class="card-text">{{ post.excerpt }}</p>
                     <div class="blog-card mt-auto">
-                        <hr/>
+                        <hr />
                         <p class="card-text text-muted h6">Published on: {{ post.published }}</p>
                         <a href="{% url 'post_detail' post.slug %}" class="btn custom-btn">Read More</a>
                     </div>
@@ -75,13 +72,13 @@
 
             <!-- Previous Page Button -->
             {% if page_obj.has_previous %}
-                <a class="btn custom-btn" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">&laquo;
-                    PREV</a>
+            <a class="btn custom-btn" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">&laquo;
+                PREV</a>
             {% endif %}
 
             <!-- Next Page Button -->
             {% if page_obj.has_next %}
-                <a class="btn custom-btn" href="?page={{ page_obj.next_page_number }}" aria-label="Next">NEXT &raquo;</a>
+            <a class="btn custom-btn" href="?page={{ page_obj.next_page_number }}" aria-label="Next">NEXT &raquo;</a>
 
             {% endif %}
         </div>
@@ -91,95 +88,143 @@
 </section>
 
 <!-- About The Independent Explorer -->
+<section class="container section" id="about-me">
+    <div class="row">
+        <h1 class="text-center" id="about-me-title">About The Independent Explorer</h1>
+        <div class="col-12 col-xl-6">
+            <!-- Image by Joshua Earle Accessed Via Unsplash -->
+            <img src="{% static 'images/aboutme.jpg' %}" alt="">
+        </div>
+        <div class="col-12 col-xl-6">
+            <p>Some people plan their holidays six months in advance. I respect those people enormously and have never
+                once been one of them.
+                I'm The Independent Explorer — a Londoner with a well-worn passport, an unreasonable number of frequent
+                flyer miles, and a genuine belief that the best travel writing is honest about the parts that don't make
+                the highlight reel.
+                I've been travelling seriously for the better part of fifteen years, across six continents and more
+                countries than I can list without sounding like I'm showing off. I've trekked at altitude and eaten at
+                Michelin-starred restaurants and slept in dormitory bunks and glass-roofed cabins above the Arctic
+                Circle. I've taken the slow boat when I should have flown and flown when I should have taken the slow
+                boat. I've made most of the mistakes worth making, and a few that weren't.
+                What I've learned from all of it is that there is no single right way to travel. Budget backpacking and
+                boutique hotels, solo adventures and trips built around food or history or wellness — every style has
+                its place, depending on who you are and what you need from the road at any given moment. The Independent
+                Explorer exists because I wanted a space that reflects that breadth honestly, without the rose-tinted
+                filter that so much travel content defaults to.
+                You won't find perfect itineraries here. You'll find real accounts — the altitude headache at 5,100
+                metres, the two nights of cloud cover before the northern lights finally appeared, the retreat diet that
+                tested my resolve somewhere around day three of kitchari. The good stuff too, of course — always the
+                good stuff. But the full picture, as faithfully as I can render it.
+                I'm based in London, which means I have easy access to Europe and a very good reason to spend as much
+                time as possible somewhere else. I write every post on this site myself, from notes taken in the moment
+                and memories I'm not ready to let go of yet.
+                If something I've written helps you plan a trip, or convinces you to book one you'd been putting off,
+                then this site is doing exactly what it's supposed to.
+                The world is large and mostly wonderful. Go and see it.
+                — The Independent Explorer</p>
+        </div>
+    </div>
+</section>
 
-<!-- Destinations Visited plus carousel-->
 
-<!--<section class="container section" id="destinations-section">
 
-     Destinations Title
-     <h1 class="text-center" id="destinations-title">Destinations Visited</h1>
 
-     Destinations Grid: 4 per row 
+
+
+
+<!-- Destinations Visited plus carousel -->
+
+<section class="container section" id="destinations">
+
+    <h1 class="text-center" id="destinations-title">Destinations Visited</h1>
+
+    <!-- Destinations Grid: 4 per row -->
     <div class="row g-3">
 
-        Card 1 
+        <!-- Card 1 -->
         <div class="col-6 col-md-3">
             <div class="card destination-card">
-                 Image by Raimond Klavins accessed via Unsplash 
+                <!-- Image by Diego Jimenez accessed via Unsplash -->
                 <img src="{% static 'images/destination1.jpg' %}" class="card-img-top" alt="Destination 1">
                 <div class="card-body">
-                    <h5 class="card-title">Destination 1</h5>
+                    <h5 class="card-title">Torres del Paine National Park, Chile</h5>
                 </div>
             </div>
         </div>
 
-         Card 2 
+        <!-- Card 2 -->
         <div class="col-6 col-md-3">
             <div class="card destination-card">
+                <!-- Image by Neil Sengupta accessed via Unsplash -->
                 <img src="{% static 'images/destination2.jpg' %}" class="card-img-top" alt="Destination 2">
                 <div class="card-body">
-                    <h5 class="card-title">Destination 2</h5>
+                    <h5 class="card-title">Tbilisi, Georgia</h5>
                 </div>
             </div>
         </div>
 
-         Card 3 
+        <!-- Card 3 -->
         <div class="col-6 col-md-3">
             <div class="card destination-card">
+                <!-- Image by Raquel Moss accessed via Unsplash -->
                 <img src="{% static 'images/destination3.jpg' %}" class="card-img-top" alt="Destination 3">
                 <div class="card-body">
-                    <h5 class="card-title">Destination 3</h5>
+                    <h5 class="card-title">Chichén Itzá, Mexico</h5>
                 </div>
             </div>
         </div>
 
-
-         Card 4 
+        <!-- Card 4 -->
         <div class="col-6 col-md-3">
             <div class="card destination-card">
+                <!-- Image by Sebastian Boring accessed via Unsplash -->
                 <img src="{% static 'images/destination4.jpg' %}" class="card-img-top" alt="Destination 4">
                 <div class="card-body">
-                    <h5 class="card-title">Destination 4</h5>
+                    <h5 class="card-title">Gasadalur, Faroe Islands</h5>
                 </div>
             </div>
         </div>
 
-         Card 5 
+        <!-- Card 5 -->
         <div class="col-6 col-md-3">
             <div class="card destination-card">
+                <!-- Image by Lidia Stawinska accessed via Unsplash -->
                 <img src="{% static 'images/destination5.jpg' %}" class="card-img-top" alt="Destination 5">
                 <div class="card-body">
-                    <h5 class="card-title">Destination 5</h5>
+                    <h5 class="card-title">Zanzibar, Tanzania</h5>
                 </div>
             </div>
         </div>
 
-        Card 6 
+        <!-- Card 6 -->
         <div class="col-6 col-md-3">
             <div class="card destination-card">
+                <!-- Image by Steph Smith accessed via Unsplash -->
                 <img src="{% static 'images/destination6.jpg' %}" class="card-img-top" alt="Destination 6">
                 <div class="card-body">
-                    <h5 class="card-title">Destination 6</h5>
+                    <h5 class="card-title">Mostar, Bosnia and Herzegovina</h5>
                 </div>
             </div>
         </div>
 
-         Card 7 
+        <!-- Card 7 -->
         <div class="col-6 col-md-3">
             <div class="card destination-card">
+                <!-- Image by Geoff Greenwood accessed via Unsplash -->
                 <img src="{% static 'images/destination7.jpg' %}" class="card-img-top" alt="Destination 7">
                 <div class="card-body">
-                    <h5 class="card-title">Destination 7</h5>
+                    <h5 class="card-title">Bangkok, Thailand</h5>
                 </div>
             </div>
         </div>
 
-        Card 8
+        <!-- Card 8 -->
         <div class="col-6 col-md-3">
             <div class="card destination-card">
+                <!-- Image by Silver Ringvee accessed via Unsplash -->
                 <img src="{% static 'images/destination8.jpg' %}" class="card-img-top" alt="Destination 8">
                 <div class="card-body">
-                    <h5 class="card-title">Destination 8</h5>
+                    <h5 class="card-title">Hanoi, Vietnam</h5>
                 </div>
             </div>
         </div>
@@ -187,10 +232,9 @@
 
     </div>
 
-</section> -->
+</section>
 
 
-<!-- Send Me a Message -->
 
 
 
